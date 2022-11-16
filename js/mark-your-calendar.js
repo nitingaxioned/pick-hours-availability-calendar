@@ -98,9 +98,12 @@
             for (i = 0; i < 7; i++) {
                 var tmpAvailTimes = ``;
                 $.each(settings.availability[i], function() {
+                    let start = new Date(this.start),
+                    txt = (("0" + start.getUTCHours()).slice(-2) + ":" + ("0" + start.getUTCMinutes()).slice(-2)),
+                    ID = this.id;
                     tmpAvailTimes += `
-                        <a href="javascript:;" class="myc-available-time" data-time="` + this + `" data-date="` + formatDate(settings.startDate.addDays(i)) + `">
-                            ` + this + `
+                        <a href="javascript:;" class="myc-available-time" data-id="` + ID + `" data-time="` + txt + `" data-date="` + formatDate(settings.startDate.addDays(i)) + `">
+                            ` + txt + `
                         </a>
                     `;
                 });
@@ -151,7 +154,8 @@
         this.on('click', '.myc-available-time', function() {
             var date = $(this).data('date');
             var time = $(this).data('time');
-            var tmp = date + ' ' + time;
+            var id = $(this).data('id');
+            var tmp = date + ' ' + time + ' ' + id;
             if ($(this).hasClass('selected')) {
                 $(this).removeClass('selected');
                 var idx = settings.selectedDates.indexOf(tmp);

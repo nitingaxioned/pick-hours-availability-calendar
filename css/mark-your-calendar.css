@@ -73,7 +73,7 @@
     min-height: 50px;
     padding: 15px 0px 15px 15px;
     vertical-align: top;
-    width: 13.77%;
+    width: calc(13.9% - 15px);
 }
 
 .myc-date-header:first-of-type {
@@ -82,7 +82,7 @@
 
 .myc-date-header:last-of-type {
     border-right: none;
-    width: 13%;
+    width: calc(13.9% - 15px);
 }
 
 #myc-available-time-container {
@@ -94,9 +94,9 @@
     /*border-right: 1px solid #e0e0e0;*/
     display: inline-block;
     height: 100%;
-    padding: 15px 15px 15px 15px;
+    padding: 15px 7.5px 15px 7.5px;
     vertical-align: top;
-    width: 13.77%;
+    width: calc(13.9% - 15px);
 }
 
 .myc-day-time-container:first-of-type {
@@ -105,7 +105,7 @@
 
 .myc-day-time-container:last-of-type {
     border-right: none;
-    width: 13%;
+    width: calc(13.9% - 15px);
 }
 
 .myc-date-number {
@@ -129,13 +129,4 @@
 
 .myc-date-display {
     font-weight: lighter;
-}
-
-@media only screen and (max-width: 768px) {
-    .myc-date-header, .myc-day-time-container {
-        width: 13.5%;
-    }
-    /*.myc-date-header:last-of-type, .myc-day-time-container:last-of-type {
-        width: 12%;
-    }*/
 }
